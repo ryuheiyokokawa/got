@@ -41,10 +41,10 @@ function requestAsEventEmitter(opts) {
 
 		let fn = opts.protocol === 'https:' ? https : http;
 
-		if (opts.useElectronNet && process.versions.electron) {
-			const electron = require('electron');
-			fn = electron.net || electron.remote.net;
-		}
+//		if (opts.useElectronNet && process.versions.electron) {
+//			const electron = require('electron');
+//			fn = electron.net || electron.remote.net;
+//		}
 
 		const req = fn.request(opts, res => {
 			const statusCode = res.statusCode;
